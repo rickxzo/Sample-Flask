@@ -1,6 +1,6 @@
 from flask import Flask
 import os
-app = Flask()
+app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def root():
