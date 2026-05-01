@@ -1,10 +1,12 @@
 from flask import Flask
 import os
+from dotenv import load_dotenv()
+load_dotenv()
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def root():
-  return {"message": "Hello World"}
+  return {"message": os.getenv('VAR1')}
 
 if __name__ == "__main__":
   port = int(os.environ.get("PORT", 5000))
